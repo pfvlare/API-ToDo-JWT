@@ -2,12 +2,11 @@ services:
   - type: web
     name: todo-api
     runtime: docker
+    plan: free
     branch: main
-    dockerfilePath: ./Dockerfile
-    buildCommand: ""
-    startCommand: ""
+    region: oregon
+    dockerContext: .
+    dockerfilePath: Dockerfile
     envVars:
       - key: PORT
         value: 10000
-    plan: free
-    region: oregon
