@@ -8,3 +8,6 @@ services:
     publishPath: out
     region: oregon
     plan: free
+    envVars:
+  - key: PORT
+    value: 10000
