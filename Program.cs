@@ -4,7 +4,13 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+    Args = args,
+    ApplicationName = typeof(Program).Assembly.FullName,
+    ContentRootPath = Directory.GetCurrentDirectory(),
+    EnvironmentName = Environments.Production
+});
 
 // 🔐 JWT - Chave secreta para gerar tokens
 var key = Encoding.ASCII.GetBytes("super-secreta-chave-do-jwt-2024-123456789!");
@@ -50,6 +56,10 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// 🟡 PEGA A PORTA do ambiente (Render define isso dinamicamente)
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
