@@ -5,7 +5,7 @@ WORKDIR /app
 # Copia tudo
 COPY . ./
 
-# ✅ Especifica qual projeto compilar
+# Publica o projeto
 RUN dotnet publish TodoApiNovo.csproj -c Release -o out
 
 # Etapa 2: imagem final para execução
