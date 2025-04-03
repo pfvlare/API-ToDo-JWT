@@ -1,13 +1,13 @@
 services:
   - type: web
     name: todo-api
-    runtime: dotnet
+    runtime: docker
     branch: main
-    buildCommand: dotnet publish -c Release -o out
-    startCommand: dotnet out/TodoApiNovo.dll
-    publishPath: out
-    region: oregon
-    plan: free
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: ""
     envVars:
       - key: PORT
         value: 10000
+    plan: free
+    region: oregon
