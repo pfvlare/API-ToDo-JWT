@@ -1,10 +1,6 @@
 <h1 align="center">🔐 ToDo API - ASP.NET Core 7 + JWT + Docker</h1>
 
 <p align="center">
-  <img src="./assets/4057A53E-35D6-4766-91E5-31BDEBBC6C1D.png" alt="Swagger UI" width="400"/>
-</p>
-
-<p align="center">
   <a href="https://api-todo-jwt.onrender.com/swagger/index.html" target="_blank">🌐 Ver API no Swagger</a>
 </p>
 
